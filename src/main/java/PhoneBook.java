@@ -1,17 +1,23 @@
-import java.util.TreeMap;
+import java.util.*;
 
 public class PhoneBook {
 
-    private TreeMap<String, String> phoneBook = new TreeMap<>();
+    private Map<String, String> phoneBookName = new TreeMap<>();
+    private Map<String, String> phoneBookNumber = new TreeMap<>();
 
     public int add(String name, String number) {
-        if (!phoneBook.containsKey(name)) {
-            phoneBook.put(name, number);
+        if (!phoneBookName.containsKey(name)) {
+            phoneBookName.put(name, number);
+            phoneBookNumber.put(number, name);
         }
-        return phoneBook.size();
+        return phoneBookName.size();
     }
 
     public String findByNumber(String number) {
-        return null;
+
+        if (phoneBookNumber.containsKey(number)) {
+            return phoneBookNumber.get(number);
+        }
+        return "Ничего не найдено";
     }
 }
