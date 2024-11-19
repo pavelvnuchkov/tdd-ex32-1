@@ -27,4 +27,8 @@ public class PhoneBook {
         }
         return "Ничего не найдено";
     }
+
+    public String printAllNames() {
+        return null;
+    }
 }

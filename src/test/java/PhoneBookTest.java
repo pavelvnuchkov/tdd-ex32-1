@@ -1,7 +1,14 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -46,5 +53,21 @@ class PhoneBookTest {
     })
     public void findByName(String name, String expected) {
         Assertions.assertEquals(expected, PHONE_BOOK.findByName(name));
+    }
+
+    @Test
+    public void printAllNames() {
+        String[] name = {
+                "Иванов Петя",
+                "Петров Женя",
+                "Сидоров Егор",
+                "Петров Женя2",
+                "Иванов Петя2",
+                "Иванов Петя2",
+                "Арбузов Ваня"};
+        List<String> sortedList = Arrays.asList(name);
+        Collections.sort(sortedList);
+        String expected = sortedList.toString();
+        Assertions.assertEquals(expected, PHONE_BOOK.printAllNames());
     }
 }
