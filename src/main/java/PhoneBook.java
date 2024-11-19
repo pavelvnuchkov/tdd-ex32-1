@@ -20,4 +20,8 @@ public class PhoneBook {
         }
         return "Ничего не найдено";
     }
+
+    public String findByName(String name) {
+        return null;
+    }
 }

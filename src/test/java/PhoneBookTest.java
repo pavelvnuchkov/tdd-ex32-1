@@ -19,7 +19,7 @@ class PhoneBookTest {
     @ParameterizedTest
     @CsvSource(value = {
             "Иванов Петя2, 89273331123, 5",
-            "Петров Женя2, 89224413311, 6",
+            "Петров Женя2, 89224413313, 6",
             "Иванов Петя2, 89273331123, 6"
     })
     public void addTest(String name, String number, int expected) {
@@ -37,5 +37,14 @@ class PhoneBookTest {
     public void findByNumber(String number, String expected) {
         Assertions.assertEquals(expected, PHONE_BOOK.findByNumber(number));
     }
-    
+
+    @ParameterizedTest
+    @CsvSource(value = {
+            "Иванов Петя2, 89273331123",
+            "Петров Женя2, 89224413313",
+            "Иванов Петя2, 89273331123"
+    })
+    public void findByName(String name, String expected) {
+        Assertions.assertEquals(expected, PHONE_BOOK.findByName(name));
+    }
 }
