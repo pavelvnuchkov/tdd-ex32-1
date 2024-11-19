@@ -29,6 +29,7 @@ public class PhoneBook {
     }
 
     public String printAllNames() {
-        return null;
+        System.out.println(phoneBookName.keySet());
+        return phoneBookName.keySet().toString();
     }
 }

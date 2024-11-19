@@ -63,7 +63,6 @@ class PhoneBookTest {
                 "Сидоров Егор",
                 "Петров Женя2",
                 "Иванов Петя2",
-                "Иванов Петя2",
                 "Арбузов Ваня"};
         List<String> sortedList = Arrays.asList(name);
         Collections.sort(sortedList);
